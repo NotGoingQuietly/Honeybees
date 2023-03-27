@@ -19,9 +19,8 @@ filtered_data = data3.loc[(data3['Year'] == year) & (data3['State'] == state)][[
 
 filtered_data = filtered_data.reset_index()
 
-# Create line chart
+# Create bar chart
 chart = alt.Chart(filtered_data).mark_bar().encode(
-    #x='Period:T',
     alt.X('Period:O', title='Quarter',
     sort=['JAN THRU MAR','APR THRU JUN','JUL THRU SEP','OCT THRU DEC']),
     y= alt.Y(variable, title=variable)
